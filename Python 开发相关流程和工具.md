@@ -260,7 +260,7 @@ repos:
 
 执行 `pre-commit install` 安装 pre-commit hook。后续这些插件会在执行 `git commit` 时自动执行。
 
-### make
+## make
 
 make 实际上是一个构建工具，可以定义一些任务，然后通过 make 命令执行，在编译型语言项目中很常见。但是在 python 项目中，也可以当做命令配置工具来使用。例如我们上文中提到的这些所有工具，可以将所有安装、使用命令放到 makefile 中，通过 make 命令执行，方便使用。
 
