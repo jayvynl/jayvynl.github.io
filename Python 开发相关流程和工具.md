@@ -147,7 +147,7 @@ requirements-prod.txt 文件示例：
 gunicorn
 ```
 
-使用 `pip-compile requirements-prod.txt -o requirements-prod.txt` 生成生产环境的依赖。
+使用 `pip-compile requirements-prod.in -o requirements-prod.txt` 生成生产环境的依赖。
 
 如果希望所有依赖始终保持最新，可以在 CI 流程中日常执行 `pip-compile requirements.in --upgrade` 始终保持依赖最新，一旦发现由于升级导致代码不可用，可以及时修复。
 
@@ -227,18 +227,18 @@ $ pip install pre-commit
 
 ```yaml 
 repos:
-- repo: https://github.com/psf/black
-  rev: 22.10.0
+- repo: https://github.com/psf/black-pre-commit-mirror
+  rev: 24.4.2
   hooks:
   - id: black
 - repo: https://github.com/pycqa/isort
   rev: 5.11.2
   hooks:
   - id: isort
-- repo: https://github.com/psf/black-pre-commit-mirror
-  rev: 24.4.2
+- repo: https://github.com/pycqa/flake8
+  rev: 7.1.0
   hooks:
-  - id: black
+  - id: flake8
 - repo: https://github.com/jazzband/pip-tools
   rev: 7.4.1
   hooks:
